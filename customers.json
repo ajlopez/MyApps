@@ -1,0 +1,15 @@
+{
+    "1": {
+        "_id": 1,
+        "name": "Customer 1",
+        "address": "Address 1",
+        "web_site": "http://customer1.com"
+    }
+    ,
+    "2": {
+        "_id": 2,
+        "name": "Customer 2",
+        "address": "Address 2",
+        "web_site": "http://customer2.com"
+    }
+}

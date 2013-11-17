@@ -1,0 +1,99 @@
+{
+    "1": {
+        "Id": 1,
+        "Name": "My Company",
+        "Description": "Managing my company",
+        "OwnerId": 1,
+        "IsPublic": true,
+        "Entities": [
+            {
+                "Id": 1,
+                "Name": "Customer",
+                "Description": "My Customers",
+                "PluralName": "Customers",
+                "Properties": [
+                    {
+                        "Id": 1,
+                        "Name": "Name",
+                        "Type": "String",
+                        "IsDescription": true,
+                        "InList": true
+                    }
+                    ,
+                    {
+                        "Id": 2,
+                        "Name": "Address",
+                        "Type": "Text",
+                        "IsDescription": false,
+                        "InList": false
+                    }
+                    ,
+                    {
+                        "Id": 3,
+                        "Name": "Web Site",
+                        "Type": "String",
+                        "IsDescription": false,
+                        "InList": true
+                    }
+                ]
+            }
+            ,
+            {
+                "Id": 2,
+                "Name": "Supplier",
+                "Description": "My Suppliers",
+                "PluralName": "Suppliers",
+                "Properties": [
+                    {
+                        "Id": 1,
+                        "Name": "Name",
+                        "Type": "String",
+                        "IsDescription": true,
+                        "InList": true
+                    }
+                    ,
+                    {
+                        "Id": 2,
+                        "Name": "Address",
+                        "Type": "Text",
+                        "IsDescription": false,
+                        "InList": false
+                    }
+                    ,
+                    {
+                        "Id": 3,
+                        "Name": "Web Site",
+                        "Type": "String",
+                        "IsDescription": false,
+                        "InList": true
+                    }
+                ]
+            }
+        ]
+    },
+    
+    "2": {
+        "Id": 2,
+        "Name": "My Trips",
+        "Description": "Notes and photos from my trips",
+        "OwnerId": 1,
+        "IsPublic": true,
+        "Entities": [
+             {
+                "Id": 1,
+                "Name": "City",
+                "Description": "Cities visited in my trips",
+                "PluralName": "Cities",
+                "Properties": [
+                    {
+                        "Id": 1,
+                        "Name": "Name",
+                        "Type": "String",
+                        "IsDescription": true,
+                        "InList": true
+                    }
+                ]
+            }           
+        ]
+    }
+}

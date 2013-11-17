@@ -1,0 +1,27 @@
+{
+  "name": "nko4-soloninja",
+  "version": "0.0.0",
+  "description": "SoloNinja",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "test": "simpleunit test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:nko4/soloninja.git"
+  },
+  "dependencies": {
+    "nko": "*",
+    "express": "*",
+    "ejs": "*",
+    "ejs-locals": "*",
+    "mongodb": "*"
+  },
+  "devDependencies": {
+    "simpleunit": "0.0.2"
+  },
+  "engines": {
+    "node": "0.10.x"
+  }
+}
