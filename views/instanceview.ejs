@@ -1,0 +1,27 @@
+<% layout('layout') -%>
+<div class="row btn-group actions">
+<a class="btn btn-info" href="/application/<%= appid %>"><%= appname %></a>
+<a class="btn btn-info" href="/application/<%= appid %>/entity/<%= entid %>"><%= entsetname %></a>
+<a class="btn btn-primary" href="/application/<%= appid %>/entity/<%= entid %>/instance/<%= item._id %>/edit">Edit <%= entname %></a>
+<a class="btn btn-danger" href="/application/<%= appid %>/entity/<%= entid %>/instance/<%= item._id %>/remove">Remove <%= entname %></a>
+</div>
+<div class='row'>
+    <table class="table-striped table-bordered">
+    <% properties.forEach(function (property) { %>
+        <tr>
+            <td class='legend'><%= property.Title %></td>
+            <td class='value'>
+            <% 
+            var value = item[property.Name];
+            if (helper.isImage(value)) { %>
+            <img src='<%= value %>'/>
+            <% } else if (helper.isUrl(value)) { %>
+            <a href='<%= value %>' target='_blank'><%= value %></a>
+            <% } else { %>
+            <%= value %>
+            <% } %>
+            </td>
+        </tr>
+    <% }); %>
+    </table>
+</div>

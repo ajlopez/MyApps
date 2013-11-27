@@ -1,0 +1,15 @@
+<% layout('layout') -%>
+<div class='row'>
+Welcome to <%= title %>
+</div>
+<div class="row">
+<h2>Applications</h2>
+</div>
+<div class="row btn-group actions">
+<a class="btn btn-primary" href="/admin/application/new">Create Application</a>
+</div>
+<% items.forEach(function (item) { %>
+<div class="row">
+<a class="btn btn-info" href="/application/<%= item.Id %>"><%= item.Name %></a>
+</div>
+<% }); %>

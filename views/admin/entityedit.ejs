@@ -1,0 +1,27 @@
+<% layout('../layout') -%>
+<div class="row btn-group actions">
+<a class="btn btn-info" href="/admin/application">Applications</a>
+<a class="btn btn-info" href="/admin/application/<%= appid %>">Application</a>
+<a class="btn btn-info" href="/admin/application/<%= appid %>/entity/<%= item.Id %>">Entity</a>
+</div>
+<form method="post">
+<div class='row'>
+    <table class="table-striped table-bordered">
+        <tr>
+            <td>Name</td>
+            <td><%= item.Name %></td>
+        </tr>
+        <tr>
+            <td>Plural Name</td>
+            <td><input type='text' name='PluralName' value='<%= item.PluralName %>' /></td>
+        </tr>
+        <tr>
+            <td>Description</td>
+            <td><textarea name='Description'><%= item.Description %></textarea></td>
+        </tr>
+    </table>
+</div>
+<div class='row actions'>
+<input class="btn btn-primary" type="submit" value="Update" />
+</div>
+</form>

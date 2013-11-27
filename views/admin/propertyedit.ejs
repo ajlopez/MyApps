@@ -1,0 +1,43 @@
+<% layout('../layout') -%>
+<div class="row btn-group actions">
+<a class="btn btn-info" href="/admin/application">Applications</a>
+<a class="btn btn-info" href="/admin/application/<%= appid %>">Application</a>
+<a class="btn btn-info" href="/admin/application/<%= appid %>/entity/<%= entid %>">Entity</a>
+</div>
+<form method="post">
+<div class='row'>
+    <table class="table-striped table-bordered">
+        <tr>
+            <td>Name</td>
+            <td><input type="text" name="Name" value="<%= item.Name %>"/></td>
+        </tr>
+        <tr>
+            <td>Type</td>
+            <td><select name="Type">
+<%
+    types.forEach(function (type) {
+%>     
+                <option <%= type === item.Type ? 'selected' : '' %>><%= type %></option>
+<%
+    });
+%>
+            </select></td>
+        </tr>
+        <tr>
+            <td>Description</td>
+            <td><textarea name="Description"><%= item.Description %></textarea></td>
+        </tr>
+        <tr>
+            <td>Is Description</td>
+            <td><input type="checkbox" name="IsDescription" <%= item.IsDescription ? 'checked' : '' %> /></td>
+        </tr>
+        <tr>
+            <td>In List</td>
+            <td><input type="checkbox" name="InList" <%= item.InList ? 'checked' : '' %> /></td>
+        </tr>
+    </table>
+</div>
+<div class='row actions'>
+<input class="btn btn-primary" type="submit" value="Update" />
+</div>
+</form>

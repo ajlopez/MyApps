@@ -1,0 +1,25 @@
+<% layout('../layout') -%>
+
+<div class="row btn-group actions">
+<a class="btn btn-primary" href="/admin/application/new">Create Application</a>
+</div>
+<div class="row">
+<% if (items && items.length) {
+%>
+<table class="table-striped table-bordered">
+    <tr>
+        <th>&nbsp;</th>
+        <th>Name</th>
+    </tr>  
+<%  items.forEach(function (item) { %>
+    <tr>
+        <td><a href="/admin/application/<%= item.Id %>">View</a></td>
+        <td><%= item.Name %></td>
+    </tr>
+<% });
+%>
+</table>
+<%
+    }
+%>
+</div>

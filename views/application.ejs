@@ -1,0 +1,9 @@
+<% layout('layout') -%>
+<div class='row actions'>
+<%= item.Description %>
+</div>
+<% item.Entities.forEach(function (entity) { %>
+<div class="row">
+<a class="btn btn-info" href="/application/<%= item.Id %>/entity/<%= entity.Id %>"><%= entity.PluralName %></a>
+</div>
+<% }); %>

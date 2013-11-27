@@ -1,0 +1,20 @@
+<% layout('layout') -%>
+<div class="row btn-group actions">
+<a class="btn btn-info" href="/application/<%= appid %>"><%= appname %></a>
+<a class="btn btn-info" href="/application/<%= appid %>/entity/<%= entid %>"><%= entsetname %></a>
+</div>
+<form method="post">
+<div class='row'>
+    <table class="table-striped table-bordered">
+    <% properties.forEach(function (property) { %>
+        <tr>
+            <td class='legend'><%= property.Title %></td>
+            <td class='value'><input type='text' name='<%= property.Name %>' /></td>
+        </tr>
+    <% }); %>
+    </table>
+</div>
+<div class='row actions'>
+<input class="btn btn-primary" type="submit" value="Create" />
+</div>
+</form>

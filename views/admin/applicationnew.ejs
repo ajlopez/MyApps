@@ -1,0 +1,25 @@
+<% layout('../layout') -%>
+<div class="row btn-group actions">
+<a class="btn btn-info" href="/admin/application">Applications</a>
+</div>
+<form method="post">
+<div class='row'>
+    <table class="table-striped table-bordered">
+        <tr>
+            <td>Name</td>
+            <td><input type="text" name="Name"/></td>
+        </tr>
+        <tr>
+            <td>Description</td>
+            <td><textarea name="Description"></textarea></td>
+        </tr>
+        <tr>
+            <td>Is Public</td>
+            <td><input type="checkbox" name="IsPublic"/></td>
+        </tr>
+    </table>
+</div>
+<div class='row actions'>
+<input class="btn btn-primary" type="submit" value="Create" />
+</div>
+</form>

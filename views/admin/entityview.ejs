@@ -1,0 +1,64 @@
+<% layout('../layout') -%>
+<div class="row btn-group actions">
+<a class="btn btn-info" href="/admin/application">Applications</a>
+<a class="btn btn-info" href="/admin/application/<%= appid %>">Application</a>
+<a class="btn btn-primary" href="/admin/application/<%= appid %>/entity/<%= item.Id %>/edit">Edit Entity</a>
+<a class="btn btn-danger" href="/admin/application/<%= appid %>/entity/<%= item.Id %>/remove">Remove Entity</a>
+</div>
+<div class='row'>
+    <table class="table-striped table-bordered">
+        <tr>
+            <td class='legend'>Name</td>
+            <td class='value'><%= item.Name %></td>
+        </tr>
+        <tr>
+            <td class='legend'>Plural Name</td>
+            <td class='value'><%= item.PluralName %></td>
+        </tr>
+        <tr>
+            <td class='legend'>Description</td>
+            <td class='value'><%= item.Description %></td>
+        </tr>
+    </table>
+</div>
+<div class='row'>
+<h2>Properties</h2>
+</div>
+<div class='row'>
+An Entity contains Properties, i.e.: Name, Description, Web Site, etc...... You can create, view and modify properties in your entities.
+</div>
+
+<div class="row btn-group actions">
+<a class="btn btn-primary" href="/admin/application/<%= appid %>/entity/<%= item.Id %>/property/new">Create Property</a>
+</div>
+<div class="row">
+<% if (item.Properties && item.Properties.length) {
+%>
+<table class="table-striped table-bordered">
+    <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Is Description</th>
+        <th>In List</th>
+        <th>Actions</th>
+    </tr>  
+<%  item.Properties.forEach(function (property) { %>
+    <tr>
+        <td><%= property.Name %></td>
+        <td><%= property.Type %></td>
+        <td><%= property.Description %></td>
+        <td><%= property.IsDescription ? 'Yes' : 'No' %></td>
+        <td><%= property.InList ? 'Yes' : 'No' %></td>
+        <td>
+        <a href="/admin/application/<%= appid %>/entity/<%= item.Id %>/property/<%= property.Id %>/edit">Edit</a>
+        &nbsp;&nbsp;
+        <a href="/admin/application/<%= appid %>/entity/<%= item.Id %>/property/<%= property.Id %>/remove">Remove</a></td>
+    </tr>
+<% });
+%>
+</table>
+<%
+    }
+%>
+</div>

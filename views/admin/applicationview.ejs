@@ -1,0 +1,53 @@
+<% layout('../layout') -%>
+<div class="row btn-group actions">
+<a class="btn btn-info" href="/admin/application">Applications</a>
+<a class="btn btn-primary" href="/admin/application/<%= item.Id %>/edit">Edit Application</a>
+<a class="btn btn-danger" href="/admin/application/<%= item.Id %>/remove">Remove Application</a>
+</div>
+<div class='row'>
+    <table class="table-striped table-bordered">
+        <tr>
+            <td class='legend'>Name</td>
+            <td class='value'><%= item.Name %></td>
+        </tr>
+        <tr>
+            <td class='legend'>Description</td>
+            <td class='value'><%= item.Description %></td>
+        </tr>
+        <tr>
+            <td class='legend'>Is Public</td>
+            <td class='value'><%= item.IsPublic ? 'Yes' : 'No' %></td>
+        </tr>
+    </table>
+</div>
+<div class='row'>
+<h2>Entities</h2>
+</div>
+<div class='row'>
+An Application contains Entities, like Customers, Suppliers, Photos, Notes... You can create, view (and then modify) entities
+in your application.
+</div>
+
+<div class="row btn-group actions">
+<a class="btn btn-primary" href="/admin/application/<%= item.Id %>/entity/new">Create Entity</a>
+</div>
+<div class="row">
+<% if (item.Entities && item.Entities.length) {
+%>
+<table class="table-striped table-bordered">
+    <tr>
+        <th>&nbsp;</th>
+        <th>Name</th>
+    </tr>  
+<%  item.Entities.forEach(function (entity) { %>
+    <tr>
+        <td><a href="/admin/application/<%= item.Id %>/entity/<%= entity.Id %>">View</a></td>
+        <td><%= entity.Name %></td>
+    </tr>
+<% });
+%>
+</table>
+<%
+    }
+%>
+</div>
