@@ -5,7 +5,6 @@ var applications = require('../lib/applications'),
     users = require('../lib/users');
     
 exports.index = function(req, res){
-    console.dir(req.session);
     userid = users.getCurrentUserId(req);
     
     applications.getApplicationsByOwnerId(userid, function (err, apps) {
@@ -58,7 +57,6 @@ exports.dologin = function(req, res) {
 };
 
 exports.register = function(req, res) {
-    console.log('register');
     var username = req.param('username');
     var password = req.param('password');
     
@@ -69,19 +67,16 @@ exports.register = function(req, res) {
         password = password.trim();
         
     if (!username) {
-        console.log('user');
         res.render('login', { title: 'Login', error2: 'Username is required', error: '' });
         return;
     }
         
     if (!password) {
-        console.log('password');
         res.render('login', { title: 'Login', error2: 'Password is required', error: '' });
         return;
     }
 
     if (users.userExists(username, password)) {
-        console.log('exists');
         res.render('login', { title: 'Login', error2: 'User already exists', error: '' });
         return;
     }
@@ -89,8 +84,6 @@ exports.register = function(req, res) {
     var user = users.addUser(username, password);
     
     req.session.userId = user.Id;
-    
-    console.log('redirect');
     
     res.redirect('/');
 };
